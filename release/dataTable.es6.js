@@ -368,7 +368,7 @@ function CellDirective($rootScope, $compile, $log, $timeout){
         <label ng-if="cell.column.isCheckboxColumn" class="dt-checkbox"">
           <input type="checkbox"
                  ng-checked="cell.selected"
-                 ng-click="cell.onCheckboxChanged($event) />
+                 ng-click="cell.onCheckboxChanged($event)" />
           <span class="dt-checkbox-indicator"></span>
         </label>
         <span ng-if="cell.column.isTreeColumn && cell.hasChildren"
@@ -1742,6 +1742,7 @@ function HeaderCellDirective($compile){
             <input type="checkbox"
                    ng-checked="hcell.selected"
                    ng-click="hcell.onCheckboxChange()" />
+            <span class="dt-checkbox-indicator"></span>
           </label>
           <span class="dt-header-cell-label"
                 ng-click="hcell.onSorted()">
