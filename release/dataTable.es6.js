@@ -365,10 +365,10 @@ function CellDirective($rootScope, $compile, $log, $timeout){
             data-title="{{::cell.column.name}}"
             ng-style="cell.styles()"
             ng-class="cell.cellClass()">
-        <label ng-if="cell.column.isCheckboxColumn" class="dt-checkbox">
+        <label ng-if="cell.column.isCheckboxColumn" class="dt-checkbox" ng-click="cell.onCheckboxChanged($event)">
           <input type="checkbox"
-                 ng-checked="cell.selected"
-                 ng-click="cell.onCheckboxChanged($event)" />
+                 ng-checked="cell.selected" />
+          <span class="dt-checkbox-indicator"></span>
         </label>
         <span ng-if="cell.column.isTreeColumn && cell.hasChildren"
               ng-class="cell.treeClass()"
@@ -409,7 +409,7 @@ function CellDirective($rootScope, $compile, $log, $timeout){
             } else {
               content[0].innerHTML = ctrl.getValue();
             }
-            
+
           }, true);
 
           function createCellScope(){
