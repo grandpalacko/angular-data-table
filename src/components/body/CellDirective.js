@@ -26,7 +26,7 @@ export function CellDirective($rootScope, $compile, $log, $timeout){
         <label ng-if="cell.column.isCheckboxColumn" class="dt-checkbox"">
           <input type="checkbox"
                  ng-checked="cell.selected"
-                 ng-click="cell.onCheckboxChanged($event) />
+                 ng-click="cell.onCheckboxChanged($event)" />
           <span class="dt-checkbox-indicator"></span>
         </label>
         <span ng-if="cell.column.isTreeColumn && cell.hasChildren"
